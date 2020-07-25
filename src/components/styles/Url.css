@@ -1,0 +1,45 @@
+.url{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    padding:10px;
+    width:70%;
+    margin:auto;
+    margin-top:20px;
+    background-color: white;
+    border-radius: 2px;
+  }
+  
+
+.longid{
+    text-decoration: none;
+    font-family:Arial;
+    font-size:18px;
+    color:rgb(41, 26, 26);
+
+  }
+  
+.shortid{
+    text-decoration:none;
+    font-size:18px;
+  }
+  
+.btn-2{
+    background-color: #eee;
+    text-decoration: none;
+    color:blue;
+    border:none;
+    padding:7px;
+    border:none;
+    cursor: pointer;
+  }
+.btn-2:hover{
+  background-color: rgb(226, 223, 223);
+  
+}
+  @media(max-width:700px)
+  {
+    .url{
+      flex-direction: column;
+        }
+      } 
