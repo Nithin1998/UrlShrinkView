@@ -15,14 +15,12 @@ const Index =  ()=>{
   const [sendingUrl,changeurl] = useState('')
   const [textToCopy,changeText] = useState('')
   const [alert,changeAlert]  = useState()
-  const [badUrl,changeBad] = useState(false)
   const [isloading,changeloading] = useState(false)   
 
   //Function that handles post request to the api
-  const Submit = () =>{
+  const Submit = (e) =>{
     if(sendingUrl){
       changeAlert(false)
-      changeBad(false)
       changeloading(true)
       fetch("https://nith.herokuapp.com/shortUrls/",{
         method:"POST",
@@ -36,15 +34,14 @@ const Index =  ()=>{
       } 
       })  
       .then(function (response){ 
-        if(response.status===400){
-                changeBad(true)
+        if(response.status===404){
+                changeAlert(true)
                 changeloading(false)
                 throw new Error('error')}
         else{
         return response.json()}
       })
       .then(function(json){ 
-        console.log(json.short)
         changeText(json.short)
         changeloading(false)
         return changeState(prevstate =>
@@ -56,7 +53,6 @@ const Index =  ()=>{
         }
 
      else{
-        if(badUrl) changeBad(false) 
         changeAlert(true)
      }   
   }
@@ -72,8 +68,7 @@ const Index =  ()=>{
         <p className="heading">nith.heroku</p>
       </div>
     <div className="container">
-      {alert?<div className="alert">Enter a Url!</div>:''}
-      {badUrl?<div className="alert">Enter a valid Url!</div>:''}
+      {alert?<div className="alert">Enter a valid Url!</div>:''}
       {isloading?<LoaderAnimation/>:''}
       <Form Submit={Submit} changeurl={changeurl}/>
                 {
