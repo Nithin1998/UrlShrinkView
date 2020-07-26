@@ -5,12 +5,11 @@
 body {
   margin: 0;
   font-family:sans-serif;
-  background-color: #eee;
+  background-color: #232530
 }
 .heading-div{
   margin:0;
   padding:15px;
-  background-color: rgb(66, 66, 238);
 }
 
 .heading{
@@ -40,7 +39,7 @@ input[type="text"] {
   color:red;
   padding:10px;
   display:flex;
-  font-size:1rem;
+  font-size:20px;
   align-items: center;
   margin-left:15%;
 }
