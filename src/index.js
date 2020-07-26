@@ -65,7 +65,7 @@ const Index =  ()=>{
   return(
     <Fragment>
       <div className="heading-div">
-        <p className="heading">nith.heroku</p>
+        <p className="heading">Url Shortener</p>
       </div>
     <div className="container">
       {alert?<div className="alert">Enter a valid Url!</div>:''}
