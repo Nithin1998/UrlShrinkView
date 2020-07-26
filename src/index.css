@@ -14,6 +14,8 @@ body {
 
 .heading{
   display: flex;
+  align-items: center;
+  justify-content: center;
   font-size:2.5rem;
   color:white;
   font-family: Helvetica;
